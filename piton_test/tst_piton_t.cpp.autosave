@@ -34,8 +34,20 @@ void piton_t::test_statistics_return_name(){
         s.Name()==name, "error name cout"
         );
 }
-void test_statistics_return_lvl();
-void test_statistics_return_intellect();
+void piton_t::test_statistics_return_lvl(){
+  auto l = 3;
+  statistics s("gocha",l,2);
+   QVERIFY2( 
+         s.lvl()==l,"error lvl cout"
+         );
+}
+void piton_t::test_statistics_return_intellect(){
+  auto i=3;
+  statistics s("gocha",2,i);
+  QVERIFY2(
+        s.intellect()==3,"error intellect cout"
+        );
+}
 
 QTEST_APPLESS_MAIN(piton_t)
 
