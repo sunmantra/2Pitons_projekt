@@ -1,0 +1,42 @@
+#include <QtTest>
+#include "../piton_pro/statistics.h"
+
+// add necessary includes here
+
+class piton_t : public QObject
+{
+  Q_OBJECT
+
+public:
+  piton_t();
+  ~piton_t();
+
+private slots:
+  void test_statistics_return_name();
+  void test_statistics_return_lvl();
+  void test_statistics_return_intellect();
+};
+
+piton_t::piton_t()
+{
+
+}
+
+piton_t::~piton_t()
+{
+
+}
+
+void piton_t::test_statistics_return_name(){
+  auto name="Testing";
+  statistics s(name,2,2);
+  QVERIFY2(
+        s.Name()==name, "error name cout"
+        );
+}
+void test_statistics_return_lvl();
+void test_statistics_return_intellect();
+
+QTEST_APPLESS_MAIN(piton_t)
+
+#include "tst_piton_t.moc"
